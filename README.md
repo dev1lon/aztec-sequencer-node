@@ -46,7 +46,7 @@ Aztec is building a decentralized, privacy-focused network and the sequencer nod
 ```
 or
 ```
-[ -f "aztec.sh" ] && rm aztec.sh; wget -q -O aztec.sh https://raw.githubusercontent.com/zunxbt/aztec-sequencer-node/main/aztec.sh && chmod +x aztec.sh && ./aztec.sh
+[ -f "aztec.sh" ] && rm aztec.sh; wget -q -O aztec.sh https://raw.githubusercontent.com/dev1lon/aztec-sequencer-node/main/aztec.sh && chmod +x aztec.sh && ./aztec.sh
 ```
 ## ⚡Commands
 - You can use this command to check logs of your node
