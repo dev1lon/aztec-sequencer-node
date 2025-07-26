@@ -87,7 +87,7 @@ if ! command -v aztec &> /dev/null; then
 fi
 
 echo -e "\n${CYAN}${BOLD}---- UPDATING AZTEC TO ALPHA-TESTNET ----${RESET}\n"
-aztec-up alpha-testnet
+aztec-up -v latest
 
 echo -e "\n${CYAN}${BOLD}---- CONFIGURING NODE ----${RESET}\n"
 IP=$(curl -s https://api.ipify.org)
@@ -128,13 +128,11 @@ cat > $HOME/start_aztec_node.sh << EOL
 export PATH=\$PATH:\$HOME/.aztec/bin
 aztec start --node --archiver --sequencer \\
   --network alpha-testnet \\
-  --port 8080 \\
   --l1-rpc-urls $L1_RPC_URL \\
   --l1-consensus-host-urls $L1_CONSENSUS_URL \\
   --sequencer.validatorPrivateKey $VALIDATOR_PRIVATE_KEY \\
   --sequencer.coinbase $COINBASE_ADDRESS \\
   --p2p.p2pIp $IP \\
-  --p2p.maxTxPoolSize 1000000000
 EOL
 
 chmod +x $HOME/start_aztec_node.sh
